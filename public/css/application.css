@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+.app {
+  background-color: #ececee; }
+
+.app-logo {
+  height: 80px; }
+
+.app-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white; }
+
+.app-title {
+  font-size: 1.5em; }
+
+.app-intro {
+  font-size: large; }
+
+@keyframes app-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.my-btn {
+  margin-top: 100px; }
+
+.navigation {
+  display: flex;
+  position: fixed;
+  background-color: #fff;
+  height: 60px;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 0 30px 0 rgba(1, 121, 255, 0.07), 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  justify-content: space-between; }
+  .navigation__brand {
+    height: 40px;
+    padding: 0.5rem 0 0 1rem; }
+  .navigation__list {
+    line-height: 30px;
+    display: flex;
+    list-style-type: none; }
+    .navigation__list--item {
+      padding-left: 1rem;
+      transition: color 0.2s ease-in-out;
+      cursor: pointer; }
+      .navigation__list--item:hover {
+        color: #4bab86; }
+      .navigation__list--item.select {
+        font-weight: 600;
+        color: #4bab86; }
+    .navigation__list .profile-icon {
+      position: relative;
+      padding: 1rem; }
+      .navigation__list .profile-icon::before {
+        position: absolute;
+        cursor: pointer;
+        content: '';
+        top: -17px;
+        left: 10px;
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+        background-image: url("../images/profile.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80% 80%; }
