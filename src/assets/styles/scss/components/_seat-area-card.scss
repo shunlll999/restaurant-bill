@@ -46,6 +46,20 @@
         font-size: 24px;
         padding: 1rem 0 1rem;
       }
+
+      &--discount {
+        color: red;
+        display: none;
+
+        &.show {
+          display: block;
+        }
+      }
+    }
+
+    &__btn {
+      @include button-style;
+      outline: none;
     }
   }
 }

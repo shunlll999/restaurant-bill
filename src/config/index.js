@@ -1,7 +1,7 @@
-export const API_URL = '';
+export const API_URL = 'http://localhost:9000';
 
 export const SEAT_AREA = [
-  { zone: 'Zone A', seats: [
+  { zone: 'Zone A', key:'A', seats: [
     { table: 'counter', max: '1'},
     { table: 'counter', max: '1'},
     { table: 'counter', max: '1'},
@@ -14,7 +14,7 @@ export const SEAT_AREA = [
     { table: 'counter', max: '1'},
     { table: 'counter', max: '1'},
   ]},
-  { zone: 'Zone B', seats: [
+  { zone: 'Zone B', key:'B', seats: [
     { table: 'table 2', max: '1-8'},
     { table: 'table 3', max: '1-8'},
     { table: 'table 4', max: '1-4'},
@@ -29,3 +29,18 @@ export const SEAT_AREA = [
     { table: 'table 13', max: '1-2'}
   ]}
 ];
+
+export const PRICES = 459;
+
+export const PROMOLIST = {
+  LUCKY_ONE: 'LUCKY ONE',
+  FOUR_PAY_THREE: '4PAY3',
+  LUCKY_TWO: 'LUCKY TWO'
+}
+
+export const PRICE_RULE = {
+  discount_a: 15/100,
+  discount_b: -1,
+  discount_c: 20/100,
+  discount_d: 25/100
+}

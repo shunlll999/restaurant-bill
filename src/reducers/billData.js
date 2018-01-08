@@ -2,21 +2,21 @@ import { Events } from '../constants';
 
 const initialState = {
   fetched: false,
-  productList: [],
+  totalPrice: null,
   error: null
 };
 
-const products = (state = initialState, action) => {
+const billData = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case Events.PRODUCT_FETCH.SUCCESS:
-      return { ...state, fetched: true, productList: payload };
-    case Events.PRODUCT_FETCH.ERROR:
+    case Events.SEND_BILL.SUCCESS:
+      return { ...state, fetched: true, totalPrice: payload };
+    case Events.SEND_BILL.ERROR:
       return { ...state, fetched: false, error: payload };
     default:
       return state;
   }
 };
 
-export default products;
+export default billData;

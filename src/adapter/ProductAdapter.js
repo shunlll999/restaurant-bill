@@ -5,6 +5,10 @@ class ProductAdapter extends BaseAdapter {
   static fetchCollection() {
     return this.prototype.getRequest(API_URL);
   }
+
+  static sendBill(params) {
+    return this.prototype.postRequest(`${API_URL}/sendbill`, params);
+  }
 }
 
 export default ProductAdapter;

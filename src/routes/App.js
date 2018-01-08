@@ -13,11 +13,16 @@ class App extends Component {
 
     this.state = {
       seatValue: '',
-      selected: false
+      selected: false,
+      keyZone: 'A'
     }
   }
-  selectZoneHander(value) {
-    this.setState({seatValue: value, selected: true});
+  selectZoneHander(value, keyZone) {
+    this.setState({seatValue: value, selected: true, keyZone});
+  }
+
+  sendBillHandler(billAmout) {
+    this.props.sendBill(billAmout);
   }
 
   render() {
@@ -25,7 +30,7 @@ class App extends Component {
       <div className="">
         <NavigationBar/>
         <SeatArea selectZoneHander={this.selectZoneHander.bind(this)}>
-          {(this.state.selected)?<SeatComp seatValue={this.state.seatValue}/>:''}
+          {(this.state.selected)?<SeatComp seatValue={this.state.seatValue} keyZone={this.state.keyZone} sendBillData={this.sendBillHandler.bind(this)} getBillData={this.props.billData}/>:'' }
         </SeatArea>
       </div>
     );
@@ -34,13 +39,13 @@ class App extends Component {
 
 const dispatchToProps = (dispatch) => {
   return bindActionCreators({
-    getProducts: EventDispatcher.getProduct
+    sendBill: EventDispatcher.sendBill
   }, dispatch);
 };
 
 const stateToProps = (state) => {
   return {
-    products: state.products
+    billData: state.billData
   };
 };
 

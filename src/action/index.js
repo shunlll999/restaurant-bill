@@ -1,18 +1,18 @@
 import { Events } from '../constants';
 import ProductAdapter from '../adapter/ProductAdapter';
 
-const getProduct = (action) => {
+const sendBill = (action) => {
   return (dispatch) => {
-    ProductAdapter.fetchCollection()
+    ProductAdapter.sendBill(action)
     .then(response => {
-      dispatch({ type: Events.PRODUCT_FETCH.SUCCESS, payload: response });
+      dispatch({ type: Events.SEND_BILL.SUCCESS, payload: response });
     })
     .catch(error => {
-      dispatch({ type: Events.PRODUCT_FETCH.ERROR, payload: error });
+      dispatch({ type: Events.SEND_BILL.ERROR, payload: error });
     });
   }
 }
 
 export const EventDispatcher = {
-  getProduct
+  sendBill
 }

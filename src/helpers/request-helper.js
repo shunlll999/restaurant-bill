@@ -3,10 +3,10 @@ import request from 'axios';
 export default function(method, endpoint, requestionOption = {}) {
   const requestConfig = {
     method: method,
-    url: endpoint
+    url: endpoint,
+    params: requestionOption
   };
-
-  return request(requestConfig, requestionOption)
+  return request(requestConfig)
     .then(response => {
       try {
         return response.data;
@@ -24,7 +24,6 @@ export default function(method, endpoint, requestionOption = {}) {
     .catch(response => {
       let error = {...response}.response;
       console.error(`[API][${method}][${endpoint}]`, error.status, error.data);
-
       throw error;
     });
 }

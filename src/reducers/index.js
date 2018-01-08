@@ -3,10 +3,10 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 
-import products from './products';
+import billData from './billData';
 
 const reducers = combineReducers({
-  products
+  billData
 });
 
 const middleware = applyMiddleware(promise(), thunk, logger);

@@ -18,8 +18,9 @@ class SeatArea extends Component {
   
   selectedZone(event) {
     let zoneValue = event.target.innerHTML;
+    let keyZone = event.target.attributes['data-key'].value;
     this.setState({zoneValue, isDropdown: !this.state.isDropdown});
-    this.props.selectZoneHander(zoneValue);
+    this.props.selectZoneHander(zoneValue, keyZone);
   }
   
   render(){
@@ -28,7 +29,7 @@ class SeatArea extends Component {
         <div className="dropdown">
           <div className="dropdown__title" onClick={this.dropdownHandler.bind(this)}>{this.state.zoneValue}</div>
           <ul className={`dropdown__list ${(this.state.isDropdown)?'show':''}`}>
-            { SEAT_AREA && (SEAT_AREA.map((data, i) => <li key={i} className="dropdown__list--item" onClick={this.selectedZone.bind(this)}>{data.zone}</li>))}
+            { SEAT_AREA && (SEAT_AREA.map((data, i) => <li key={i} className="dropdown__list--item" data-key={data.key} onClick={this.selectedZone.bind(this)}>{data.zone}</li>))}
           </ul>
         </div>
         <div>

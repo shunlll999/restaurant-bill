@@ -2413,7 +2413,7 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   dependencies:
     homedir-polyfill "^1.0.1"
 
-express@^4.13.3:
+express@^4.13.3, express@^4.16.2:
   version "4.16.2"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.2.tgz#e35c6dfe2d64b7dca0a5cd4f21781be3299e076c"
   dependencies:
@@ -5366,6 +5366,10 @@ querystringify@0.0.x:
 querystringify@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-1.0.0.tgz#6286242112c5b712fa654e526652bf6a13ff05cb"
+
+radix@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/radix/-/radix-0.0.0.tgz#03f46d73b52c3919084b9496b4d4540c060e7e2d"
 
 raf@3.4.0:
   version "3.4.0"
