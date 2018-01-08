@@ -1,0 +1,21 @@
+.dropdown {
+  position: relative;
+
+  &__title {
+    @include button-style;
+  }
+
+  &__list {
+    @include list-style;
+
+    display: none;
+
+    &--item {
+      @include item-style;
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+}

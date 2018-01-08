@@ -4,13 +4,29 @@ import { bindActionCreators } from 'redux';
 import { EventDispatcher } from '../action';
 
 import NavigationBar from '../components/NavigationBar';
+import SeatArea from '../components/SeatArea';
+import SeatComp from '../components/SeatComp';
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      seatValue: '',
+      selected: false
+    }
+  }
+  selectZoneHander(value) {
+    this.setState({seatValue: value, selected: true});
+  }
 
   render() {
     return (
       <div className="">
         <NavigationBar/>
+        <SeatArea selectZoneHander={this.selectZoneHander.bind(this)}>
+          {(this.state.selected)?<SeatComp seatValue={this.state.seatValue}/>:''}
+        </SeatArea>
       </div>
     );
   }
