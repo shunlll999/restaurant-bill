@@ -1,10 +1,14 @@
 var express = require('express');
 var app = express();
+var bodyPaser = require('body-parser');
 var server = require('http').createServer(app);
 var config  = require('./config');
 var billCal = require('./BillCalculator');
+var sql = require('./slqliteControl');
 
 app.set('port', process.env.PORT | 9000);
+app.use(bodyPaser.json());
+app.use(bodyPaser.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -14,12 +18,13 @@ app.use((req, res, next) => {
   next();
 });
 
+sql.createTable();
+
 app.get('/', (req, res)=>{
   res.send({ data:'hello world'})
 });
 
 app.post('/sendbill', (req, res)=>{
-  console.log(req.query);
   let bill = billCal.Bill(req.query.promotionKey, req.query);
   res.send(bill);
 })
