@@ -122,7 +122,7 @@ class SeatComp extends Component {
           <div><span>Bill amout : </span>{`${this.state.billAmout} Baht`}</div>
           <hr/>
           <div><span>Discount : </span>{this.state.disoutPercentge}<span className={`seat-area-content__content--discount ${(doExclude)?'show':''}`}> discount excluded</span></div>
-          <div className="seat-area-content__content--amout"><span>Total price : </span>{`${this.renderTotalPrice()} Baht`}<span className={`seat-area-content__content--discount ${(doPromo)?'show':''}`}> extra promotion</span></div>
+          <div className="seat-area-content__content--amout"><span>Total price : </span>{`${this.renderTotalPrice()} Baht`}<span className={`seat-area-content__content--extra ${(doPromo)?'show':''}`}> extra promotion include 25% discount</span></div>
           <hr/>
         </div>
         <button type="button" onClick={this.onSubmitHandle.bind(this)} className="seat-area-content__btn">Submit</button>

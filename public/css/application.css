@@ -130,6 +130,11 @@ body {
       display: none; }
       .seat-area-card .seat-area-content__content--discount.show {
         display: block; }
+    .seat-area-card .seat-area-content__content--extra {
+      color: green;
+      display: none; }
+      .seat-area-card .seat-area-content__content--extra.show {
+        display: block; }
     .seat-area-card .seat-area-content__btn {
       width: 180px;
       height: 50px;

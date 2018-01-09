@@ -55,6 +55,15 @@
           display: block;
         }
       }
+
+      &--extra {
+        color: green;
+        display: none;
+
+        &.show {
+          display: block;
+        }
+      }
     }
 
     &__btn {
