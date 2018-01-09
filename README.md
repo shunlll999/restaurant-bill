@@ -7,7 +7,6 @@ This project using `create-react-app` package
 - Install `yarn` package into global by `sudo npm install -g yarn`
 - Install `create-react-app` into global
 
----
 
 ## Setup the project
 The project will run all part `Server/Client` by type the command into the terminal like
@@ -16,7 +15,6 @@ Can command which
 ```
 yarn OR npm install
 ```
----
 
 ## Start the project
 
